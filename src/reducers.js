@@ -19,13 +19,13 @@ const todoReducer = (state = initialState, action) => {
                 tasks: newTasks
             };
         case 'TOGGLE_TASK':
-            const updatedTasks = state.tasks.map(task =>
+            const updatedTasksToggle = state.tasks.map(task =>
                 task.id === action.payload ? { ...task, completed: !task.completed } : task
             );
-            localStorage.setItem('tasks', JSON.stringify(updatedTasks)); // Update tasks in local storage
+            localStorage.setItem('tasks', JSON.stringify(updatedTasksToggle)); // Update tasks in local storage
             return {
                 ...state,
-                tasks: updatedTasks
+                tasks: updatedTasksToggle
             };
         case 'DELETE_TASK':
             const filteredTasks = state.tasks.filter(task => task.id !== action.payload);
@@ -34,6 +34,22 @@ const todoReducer = (state = initialState, action) => {
                 ...state,
                 tasks: filteredTasks
             };
+            case 'UPDATE_TASK':
+                const updatedTasks = state.tasks.map(task => {
+                    if (task.id === action.payload.taskId) {
+                        return {
+                            ...task,
+                            note: action.payload.newNote,
+                            truncatedNote: action.payload.newNote.length > 50 ? action.payload.newNote.slice(0, 50) + '...' : action.payload.newNote
+                        };
+                    }
+                    return task;
+                });
+                localStorage.setItem('tasks', JSON.stringify(updatedTasks)); // Update tasks in local storage
+                return {
+                    ...state,
+                    tasks: updatedTasks
+                };
         default:
             return state;
     }

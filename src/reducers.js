@@ -1,4 +1,3 @@
-// reducers.js
 const initialState = {
     tasks: JSON.parse(localStorage.getItem('tasks')) || []
 };

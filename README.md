@@ -2,6 +2,10 @@
 
 you can click on this link directly the app will start
 
+how to start from the code - 
+open the terminal go to the main directory and install node modules by npm i
+then run the app by npm start
+
 2. About the App - 
 
 

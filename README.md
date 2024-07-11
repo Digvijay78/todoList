@@ -5,8 +5,8 @@ you can click on this link directly the app will start
 2. About the App - 
 
 
-3. ->As Instructed the should have a Input filed
------ so there is input field, where the user can write his notes or he wants task to do today
+3. ->As Instructed the app should have a Input filed
+----- so there is input field, where the user can write his notes or the task he wants to do today
 
 4. -> The App contain a Blue button "Add Task"
  ------ user can click on the button and Notes will be saved in the TaskList and display below the input field

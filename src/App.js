@@ -3,6 +3,7 @@ import TaskInput from './components/TaskInput';
 import TaskList from './components/TaskList';
 import './App.css';
 
+// to do app
 const App = () => {
     return (
         <div>
